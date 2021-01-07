@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input type="text" class="one">
+    <input type="text" class="two">
+    <button class="three">测试
+    </button>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        $('.three').click(() => {
+            $.ajax({
+                url: "/admins/getAdmins",
+                type: 'get',
+                data: {
+                    role:0,
+                    currentPage: 1,
+                    pageSize: 10,
+                    value: '',
+                },
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
